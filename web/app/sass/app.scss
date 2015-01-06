@@ -1,0 +1,68 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+
+  :before {
+    content: "[";
+  }
+
+  :after {
+    content: "]";
+  }
+
+  > li {
+    display: inline;
+
+    :before {
+      content: "|";
+      padding-right: 0.3em;
+    }
+
+    :nth-child(1):before {
+      content: "";
+      padding: 0;
+    }
+  }
+}
+
+/* ---------------------- */
+
+.side-menu-item {
+  color: grey;
+  padding: 5px 5px 5px 10px;
+  text-decoration: none;
+
+  :hover {
+    background-color: lightgrey;
+    color: white;
+  } width: 100%;
+
+}
+
+.filelist {
+  margin: 20px; 
+  overflow: auto;
+
+  .filerow {
+
+    :hover {
+      // border-bottom: 2px dashed azure;
+      color: darkgrey;
+    }
+
+
+    .filename {
+
+      a {
+        color: dodgerblue;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+
+  }
+}

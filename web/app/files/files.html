@@ -1,0 +1,42 @@
+<div layout='column' layout-fill>
+	<md-content layout='column'>
+		<md-toolbar>
+	      <h2 class="md-toolbar-tools">
+	        <span>Files</span>
+	      </h2>
+	    </md-toolbar>
+	</md-content>
+	<md-content layout='column' layout-fill>
+		<form >
+			<div layout="row" layout-align='start center'>
+				<md-text-float style='padding: 15px' label="Filter" ng-model="files.filter"></md-text-float>
+				<md-button  style='margin-left: 50px' class="md-fab " ng-click='refreshEnv()'>
+		            <i class='fa fa-refresh fa-2x'></i>
+		        </md-button>
+			</div>
+		</form>
+	</md-content>
+	<md-list layout='column' layout-fill class='filelist'>
+        <md-item-content layout='row'>
+        	<span flex='5'><b>Size</b></span>
+        	<span flex='5'><b>Mode</b></span>
+        	<span flex='30'><b>Dir</b></span>
+        	<span flex='40'><b>File Name</b></span>
+		    <span flex='20'></span>
+        </md-item-content>
+        <md-item ng-repeat='onefile in filesList | filter:files.filter' class='filerow'>
+	        <md-item-content layout='row'>
+		        <span flex='5'>{{::onefile.Size|filesize}} </span>
+		        <span flex='5'>{{::onefile.Mode}}</span>
+		        <span flex='30'>
+					{{::onefile.Path.substring(0, onefile.Path.length - onefile.Name.length -1) | truncate}}
+		        </span>
+		        <span class='filename' flex="40"><a ng-href='s/files/file?path={{::onefile.Path}}' >{{::onefile.Name}}</a></span>
+		        <span flex='20'>
+		        	<a ng-href='s/files/file?path={{::onefile.Path}}' ><img ng-src="/bower_components/material-design-icons/file/svg/design/ic_file_download_24px.svg"/></a>
+		        	<img ng-src="/bower_components/material-design-icons/av/svg/design/ic_playlist_add_24px.svg" ng-click='tailFile()'/>	
+		        </span>
+		    </md-item-content>
+		</md-item>
+	</md-list>
+</div>

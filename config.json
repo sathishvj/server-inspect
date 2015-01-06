@@ -1,0 +1,15 @@
+{
+	"Port": 8083,
+	"Files": [
+		{
+			"Dir": "/Users/vj/coding/projects/server-inspect/web",
+			"Pattern": ".*htm.*",
+			"Recursive": true
+		},
+		{
+			"Dir": "/Users/vj/coding/projects/server-inspect/web",
+			"Pattern": ".*js",
+			"Recursive": false
+		}
+	]
+}
