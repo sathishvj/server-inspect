@@ -1,3 +1,7 @@
+# Setting up dev
+* Add dependent libraries 
+```go get github.com/cloudfouny/gosigar github.com/gorilla/mux github.com/gorilla/websocket ```
+
 # Running the project
 
 * Install CompileDaemon ```go get github.com/githubnemo/CompileDaemon```
